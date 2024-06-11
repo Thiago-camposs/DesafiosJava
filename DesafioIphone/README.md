@@ -11,7 +11,7 @@ classDiagram
 
     class AparelhoTelefonico {
         +adicionarNovaAba()
-        +atualizarPagina
+        +atualizarPagina()
         +exibirPagina(String url)
     }
 
