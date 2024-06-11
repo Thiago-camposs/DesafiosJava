@@ -19,7 +19,7 @@ public class Usuario {
         System.out.println("\n");
         
         System.out.println("Navegador Internet");
-        iphone.exibirpagina(" www.github.com");
+        iphone.exibirPagina(" www.github.com");
         iphone.atualizarPagina();
         iphone.adicionarNovaAba();
     }

@@ -5,7 +5,7 @@ import interfaces.ReprodutorMusical;
 
 public class Iphone implements NavegadorInternet,ReprodutorMusical,AparelhoTelefonico{
     @Override
-    public void exibirpagina(String url) {
+    public void exibirPagina(String url) {
         System.out.println("Exibindo a página"+url);
     }
     @Override
