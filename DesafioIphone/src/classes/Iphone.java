@@ -1,3 +1,8 @@
+package classes;
+import interfaces.AparelhoTelefonico;
+import interfaces.NavegadorInternet;
+import interfaces.ReprodutorMusical;
+
 public class Iphone implements NavegadorInternet,ReprodutorMusical,AparelhoTelefonico{
     @Override
     public void exibirpagina(String url) {

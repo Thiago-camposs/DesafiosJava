@@ -1,3 +1,4 @@
+package interfaces;
 public interface ReprodutorMusical {
     public void selecionarMusica(String musica);
     public void tocar();
