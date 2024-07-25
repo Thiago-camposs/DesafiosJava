@@ -1,18 +1,21 @@
-public abstract class Conta implements IConta{
-    private static final int agenciaPadrao=1;
-    private static int sequencial=1;
+public abstract class Conta implements IConta {
+    private static final int agenciaPadrao = 1;
+    private static int sequencial = 1;
 
     protected int agencia;
     protected int numero;
     protected double saldo;
-    
-    public Conta(){
+    protected Cliente cliente;
+
+    public Conta(Cliente cliente) {
         this.agencia = Conta.agenciaPadrao;
         this.numero = sequencial++;
-    }//construtor
-    
+        this.cliente = cliente;
+        this.cliente.adicionarConta(this);
+    }
+
     @Override
-    public void sacar(double valor){
+    public void sacar(double valor) {
         saldo -= valor;
     }
 
@@ -27,10 +30,15 @@ public abstract class Conta implements IConta{
         contaDestino.depositar(valor);
     }
 
-    protected void imprimirInfosComuns(){
-        System.out.println(String.format("Agencia: %d", agencia));
-        System.out.println(String.format("Numero: %d", numero));
+    protected void imprimirInfosComuns() {
+        System.out.println(String.format("Agência: %d", agencia));
+        System.out.println(String.format("Número: %d", numero));
         System.out.println(String.format("Saldo: %.2f", saldo));
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Conta [agência=%d, número=%d, saldo=%.2f]", agencia, numero, saldo);
     }
 
     public int getAgencia() {
@@ -43,5 +51,9 @@ public abstract class Conta implements IConta{
 
     public double getSaldo() {
         return saldo;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
     }
 }
